@@ -1,0 +1,11 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/SiteTitle.astro';
+import { Image } from 'astro:assets';
+import ccdLogo from '../assets/ccd_logo.png';
+
+// const { title } = Astro.props.entry.data;
+---
+<!-- <div class="h-16 p-2"><Image src={ccdLogo} alt="blabla" class="h-full w-full"/></div>
+<p>{title}</p> -->
+<Default {...Astro.props}><slot /></Default>

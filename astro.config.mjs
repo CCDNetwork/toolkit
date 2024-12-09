@@ -8,8 +8,15 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'CCD Toolkit',
+      logo: {
+        light: './src/assets/ccd_logo.png',
+        dark: './src/assets/ccd_logo.png',
+        replacesTitle: true,
+      },
       components: {
         Hero: './src/components/Hero.astro',
+        Header: './src/components/Header.astro',
+        SiteTitle: './src/components/SiteTitle.astro',
       },
       social: {
         github: 'https://github.com/withastro/starlight',
