@@ -15,6 +15,7 @@ export default defineConfig({
         github: 'https://github.com/withastro/starlight',
         blueSky: 'https://bsky.app/profile/tin.fyi',
       },
+
       // sidebar: [
       // 	{
       // 		label: 'Guides',
@@ -32,4 +33,5 @@ export default defineConfig({
     }),
     tailwind({ applyBaseStyles: false }),
   ],
+  site: 'https://ccdnetwork.github.io/',
 });
