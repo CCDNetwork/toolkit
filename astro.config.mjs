@@ -34,4 +34,5 @@ export default defineConfig({
     tailwind({ applyBaseStyles: false }),
   ],
   site: 'https://ccdnetwork.github.io/',
+  base: 'toolkit',
 });
