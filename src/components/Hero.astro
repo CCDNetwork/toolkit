@@ -1,0 +1,9 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/Hero.astro';
+
+const { title } = Astro.props.entry.data;
+---
+
+<h1 class="uppercase font-mono">{title}</h1>
+<Default {...Astro.props}><slot /></Default>
