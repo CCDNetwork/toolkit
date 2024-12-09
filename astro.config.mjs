@@ -36,6 +36,23 @@ export default defineConfig({
       // 		autogenerate: { directory: 'reference' },
       // 	},
       // ],
+      sidebar: [
+        {
+          label: 'Background',
+          // Autogenerate a group of links for the 'constellations' directory.
+          slug: 'background',
+        },
+        {
+          label: 'Training',
+          // Autogenerate a group of links for the 'constellations' directory.
+          autogenerate: { directory: 'training' },
+        },
+        {
+          label: 'The Toolkit',
+          // Autogenerate a group of links for the 'constellations' directory.
+          autogenerate: { directory: 'toolkit' },
+        },
+      ],
       customCss: ['./src/tailwind.css'],
     }),
     tailwind({ applyBaseStyles: false }),
