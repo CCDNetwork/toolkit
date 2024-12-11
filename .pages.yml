@@ -34,8 +34,9 @@ content:
         fields:
         - name: title
           label: Title
-          type: rich-text
-          format: code
+          type: code
+          options:
+          - language: html
         - name: tagline
           label: Tagline
           type: string
