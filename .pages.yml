@@ -9,7 +9,6 @@ content:
     view:
       fields: [ title ]
     filename: fields.slug.mdx
-    exclude: ["index.mdx"]
     fields:
       - { name: author, label: Author, type: string }
       - { name: title, label: Title, type: string, required: true }
