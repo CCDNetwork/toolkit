@@ -39,7 +39,7 @@ content:
                 type: select
                 options:
                   values: [note, tip, caution, danger, success, default]
-      - { name: body, label: Body, type: rich-text }
+      - { name: body, label: Body, type: code }
   - name: home
     label: Homepage
     type: file
