@@ -6,3 +6,8 @@
 Add additional Tailwind styles to this file, for example with @layer:
 https://tailwindcss.com/docs/adding-custom-styles#using-css-and-layer
 */
+
+:root {
+  --sl-content-width: 60rem;
+  /* --sl-text-5xl: 3.5rem; */
+}
