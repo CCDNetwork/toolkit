@@ -9,6 +9,7 @@ content:
     view:
       fields: [ title ]
     filename: fields.slug.mdx
+    exclude: [index.mdx]
     fields:
       - { name: author, label: Author, type: string }
       - { name: pubDatetime, label: Date, type: date }
