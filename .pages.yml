@@ -26,7 +26,7 @@ content:
     fields:
       - { name: title, label: Title, type: string }
       - { name: description, label: Description, type: string }
-      - { name: template, type: select, options: {values: [splash, other]} }
+      - { name: template, label: Template, type: string }
       - name: hero
         label: Hero
         type: object
@@ -39,7 +39,11 @@ content:
           type: string
         - name: image
           label: Image
-          type: image
+          type: object
+          fields:
+          - name: file
+            label: File
+            type: image
         - name: actions
           label: Actions
           type: object
