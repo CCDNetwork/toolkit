@@ -8,6 +8,7 @@ content:
     path: src/content/docs
     view:
       fields: [ title ]
+    filename: fields.slug.mdx
     fields:
       - { name: author, label: Author, type: string }
       - { name: pubDatetime, label: Date, type: date }
