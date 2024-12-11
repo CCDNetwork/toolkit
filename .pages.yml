@@ -17,6 +17,29 @@ content:
       - { name: description, label: Description, type: rich-text }
       - { name: draft, label: Draft, type: boolean }
       - { name: tags, label: Tags, type: string, list: true }
+      - name: sidebar
+        label: Sidebar
+        type: object
+        fields:
+          - name: order
+            label: Order
+            type: number
+          - name: hidden
+            label: Hidden
+            type: boolean
+            default: false
+          - name: badge
+            label: badge
+            type: object
+            fields:
+              - name: text
+                label: Text
+                type: string
+              - name: variant
+                label: Type
+                type: select
+                options:
+                  values: [note, tip, caution, danger, success, default]
       - { name: body, label: Body, type: rich-text }
   - name: home
     label: Homepage
