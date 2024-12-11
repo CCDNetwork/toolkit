@@ -84,4 +84,4 @@ content:
           - name: variant
             label: Variant
             type: string
-      - { name: body, label: Body, type: rich-text}
+      - { name: body, label: Body, type: code}
