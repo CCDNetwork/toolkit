@@ -22,7 +22,7 @@ content:
   - name: home
     label: Homepage
     type: file
-    path: src/content/index.mdx
+    path: src/content/docs/index.mdx
     fields:
       - { name: title, label: Title, type: string }
       - { name: description, label: Description, type: string }
