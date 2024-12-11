@@ -7,7 +7,7 @@ content:
     type: collection
     path: src/content/docs
     view:
-      fields: [ title, draft, date ]
+      fields: [ title ]
     fields:
       - { name: author, label: Author, type: string }
       - { name: pubDatetime, label: Date, type: date }
