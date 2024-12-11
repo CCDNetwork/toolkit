@@ -35,6 +35,7 @@ content:
         - name: title
           label: Title
           type: rich-text
+          format: code
         - name: tagline
           label: Tagline
           type: string
