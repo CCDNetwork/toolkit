@@ -59,7 +59,7 @@ content:
               language: html
           - name: tagline
             label: Tagline
-            type: string
+            type: text
           - name: image
             label: Image
             type: object
