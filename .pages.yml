@@ -1,14 +1,14 @@
 media:
   input: src/assets
-  output: src/assets
+  output: /src/assets
 content:
   - name: docs
     label: Docs
     type: collection
     path: src/content/docs
     view:
-      fields: [ title ]
-    filename: "{fields.slug}.mdx"
+      fields: [title]
+    filename: '{fields.slug}.mdx'
     fields:
       - { name: author, label: Author, type: string }
       - { name: title, label: Title, type: string, required: true }
@@ -39,7 +39,7 @@ content:
                 type: select
                 options:
                   values: [note, tip, caution, danger, success, default]
-      - { name: body, label: Body, type: code, options: {language: html} }
+      - { name: body, label: Body, type: code, options: { language: html } }
   - name: home
     label: Homepage
     type: file
@@ -52,36 +52,36 @@ content:
         label: Hero
         type: object
         fields:
-        - name: title
-          label: Title
-          type: code
-          options:
-            language: html
-        - name: tagline
-          label: Tagline
-          type: string
-        - name: image
-          label: Image
-          type: object
-          fields:
-          - name: file
-            label: File
-            type: image
-        - name: actions
-          label: Actions
-          type: object
-          list: true
-          fields:
-          - name: text
-            label: Text
+          - name: title
+            label: Title
+            type: code
+            options:
+              language: html
+          - name: tagline
+            label: Tagline
             type: string
-          - name: link
-            label: Link
-            type: string
-          - name: icon
-            label: Icon
-            type: string
-          - name: variant
-            label: Variant
-            type: string
-      - { name: body, label: Body, type: rich-text}
+          - name: image
+            label: Image
+            type: object
+            fields:
+              - name: file
+                label: File
+                type: image
+          - name: actions
+            label: Actions
+            type: object
+            list: true
+            fields:
+              - name: text
+                label: Text
+                type: string
+              - name: link
+                label: Link
+                type: string
+              - name: icon
+                label: Icon
+                type: string
+              - name: variant
+                label: Variant
+                type: string
+      - { name: body, label: Body, type: rich-text }
