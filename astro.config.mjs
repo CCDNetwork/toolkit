@@ -2,12 +2,13 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import tailwind from '@astrojs/tailwind';
-
+import markdoc from '@astrojs/markdoc';
 import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
+    markdoc(),
     starlight({
       title: 'CCD Toolkit',
       logo: {
