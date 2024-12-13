@@ -6,7 +6,7 @@ content:
     label: Docs
     type: collection
     path: src/content/docs
-    exclude: [index.mdx, background.mdx]
+    exclude: [index.mdx]
     view:
       fields: [title]
     filename: '{fields.slug}.mdx'
