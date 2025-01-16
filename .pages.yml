@@ -9,7 +9,7 @@ content:
     exclude: [index.mdx]
     view:
       fields: [title]
-    filename: '{fields.slug}.mdx'
+    filename: '{fields.slug}.mdoc'
     fields:
       - { name: author, label: Author, type: string }
       - { name: title, label: Title, type: string, required: true }
@@ -40,7 +40,7 @@ content:
                 type: select
                 options:
                   values: [note, tip, caution, danger, success, default]
-      - { name: body, label: Body, type: code, options: { language: html } }
+      - { name: body, label: Body, type: markdown }
   - name: home
     label: Homepage
     type: file

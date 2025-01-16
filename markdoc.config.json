@@ -3,8 +3,8 @@
     "id": "ccd-toolkit",
     "path": "src/content",
     "schema": {
-      "path": "markdoc.config.mjs",
-      "type": "esm",
+      "path": "markdoc.config.js",
+      "type": "module",
       "property": "default",
       "watch": true
     }
