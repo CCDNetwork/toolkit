@@ -6,47 +6,47 @@ backend:
 media_folder: 'public' # Media files will be stored in the repo under images/uploads
 
 collections:
-- label: "Pages"
-    name: "pages"
+- label: 'Pages'
+    name: 'pages'
     files:
       - label: "Home page"
         name: "home"
         file: "src/content/docs/index.mdx"
         fields:
-          - {label: Title, name: title, widget: string}
-          - {label: Description, name: description, widget: markdown}
-          - {label: Template, name: templae, widget: string}
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Description', name: 'description', widget: 'markdown'}
+          - {label: 'Template', name: 'template', widget: 'string'}
           - name: hero
-        label: Hero
-        name: hero
-        widget: object
+        label: 'Hero'
+        name: 'hero'
+        widget: 'object'
         fields:
-          - name: title
-            label: Title
-            widget: markdown
-          - name: tagline
-            label: Tagline
-            widget: markdown
-          - name: image
-            label: Image
-            widget: image
-          - name: actions
-            label: Actions
-            widget: list
+          - name: 'title'
+            label: 'Title'
+            widget: 'markdown'
+          - name: 'tagline'
+            label: 'Tagline'
+            widget: 'markdown'
+          - name: 'image'
+            label: 'Image'
+            widget: 'image'
+          - name: 'actions'
+            label: 'Actions'
+            widget: 'list'
             fields:
-              - name: text
-                label: Text
-                widget: string
-              - name: link
-                label: Link
-                wodget: string
-              - name: icon
-                label: Icon
-                widget: string
-              - name: variant
-                label: Variant
-                widget: string
-      - { name: body, label: Body, widget: markdown }
+              - name: 'text'
+                label: 'Text'
+                widget: 'string'
+              - name: 'link'
+                label: 'Link'
+                wodget: 'string'
+              - name: 'icon'
+                label: 'Icon'
+                widget: 'string'
+              - name: 'variant'
+                label: 'Variant'
+                widget: 'string'
+      - { name: 'body', label: 'Body', widget: 'markdown' }
 
       - label: "Locations Page"
         name: "locations"
