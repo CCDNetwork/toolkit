@@ -10,7 +10,7 @@ export default defineConfig({
   integrations: [
     markdoc(),
     starlight({
-      title: 'CCD Toolkit',
+      title: 'Data Stew',
       logo: {
         light: '/public/ccd_logo.png',
         dark: '/public/ccd_logo.png',
