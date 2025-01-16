@@ -12,8 +12,8 @@ export default defineConfig({
     starlight({
       title: 'CCD Toolkit',
       logo: {
-        light: '~/assets/ccd_logo.png',
-        dark: '~/assets/ccd_logo.png',
+        light: '/public/ccd_logo.png',
+        dark: '/public/ccd_logo.png',
         replacesTitle: true,
       },
       components: {
