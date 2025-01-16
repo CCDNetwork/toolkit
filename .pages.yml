@@ -1,6 +1,6 @@
 media:
-  input: src/assets
-  output: /src/assets
+  input: public
+  output: /public
 content:
   - name: docs
     label: Docs
