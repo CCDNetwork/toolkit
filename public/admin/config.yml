@@ -1,73 +1,84 @@
+local_backend: true
+
 backend:
   name: github
   branch: main
   repo: CCDNetwork/toolkit
   base_url: https://datastew-auth.draftlab.dev/
 media_folder: 'public' # Media files will be stored in the repo under images/uploads
-
+site_url: 'https://datastew.org'
 collections:
-- label: 'Pages'
+  - label: 'Pages'
     name: 'pages'
+    extension: 'mdx'
+    format: 'frontmatter'
     files:
-      - label: "Home page"
-        name: "home"
-        file: "src/content/docs/index.mdx"
+      - label: 'Home page'
+        name: 'homepage'
+        file: 'src/content/docs/index.mdx'
+        extension: 'mdx'
         fields:
-          - {label: 'Title', name: 'title', widget: 'string'}
-          - {label: 'Description', name: 'description', widget: 'markdown'}
-          - {label: 'Template', name: 'template', widget: 'string'}
-          - name: hero
-        label: 'Hero'
-        name: 'hero'
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'markdown' }
+          - { label: 'Template', name: 'template', widget: 'string' }
+          - label: 'Hero'
+            name: 'hero'
+            widget: 'object'
+            fields:
+              - name: 'title'
+                label: 'Title'
+                widget: 'markdown'
+              - name: 'tagline'
+                label: 'Tagline'
+                widget: 'markdown'
+              # - name: 'image'
+              #   label: 'Image'
+              #   widget: 'image'
+              - name: 'actions'
+                label: 'Actions'
+                widget: 'list'
+                fields:
+                  - name: 'text'
+                    label: 'Text'
+                    widget: 'string'
+                  - name: 'link'
+                    label: 'Link'
+                    wodget: 'string'
+                  - name: 'icon'
+                    label: 'Icon'
+                    widget: 'string'
+                  - name: 'variant'
+                    label: 'Variant'
+                    widget: 'string'
+                    required: false
+          - { name: 'body', label: 'Body', widget: 'markdown' }
+
+  - name: 'toolkit' # Used in routes, e.g., /admin/collections/blog
+    label: 'Toolkit' # Used in the UI
+    folder: 'src/content/docs/toolkit' # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    extension: 'mdx'
+    format: 'frontmatter'
+    fields: # The fields for each document, usually in frontmatter
+      - name: 'author'
+        label: 'Author'
+        widget: 'string'
+      - name: 'title'
+        label: 'Title'
+        widget: 'string'
+      - name: 'slug'
+        label: 'Slug'
+        widget: 'string'
+      - name: 'draft'
+        label: 'Draft'
+        widget: 'boolean'
+      - name: 'sidebar'
+        label: 'Sidebar config'
         widget: 'object'
         fields:
-          - name: 'title'
-            label: 'Title'
-            widget: 'markdown'
-          - name: 'tagline'
-            label: 'Tagline'
-            widget: 'markdown'
-          - name: 'image'
-            label: 'Image'
-            widget: 'image'
-          - name: 'actions'
-            label: 'Actions'
-            widget: 'list'
-            fields:
-              - name: 'text'
-                label: 'Text'
-                widget: 'string'
-              - name: 'link'
-                label: 'Link'
-                wodget: 'string'
-              - name: 'icon'
-                label: 'Icon'
-                widget: 'string'
-              - name: 'variant'
-                label: 'Variant'
-                widget: 'string'
-      - { name: 'body', label: 'Body', widget: 'markdown' }
-
-      - label: "Locations Page"
-        name: "locations"
-        file: "site/content/locations.yml"
-        fields:
-          - {label: Title, name: title, widget: string}
-          - {label: Intro, name: intro, widget: markdown}
-          - label: Locations
-            name: locations
-            widget: list
-            fields:
-              - {label: Name, name: name, widget: string}
-              - {label: Address, name: address, widget: string}
-  - name: 'blog' # Used in routes, e.g., /admin/collections/blog
-    label: 'Blog' # Used in the UI
-    folder: 'src/content/docs' # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields for each document, usually in frontmatter
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'blog' }
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Featured Image', name: 'thumbnail', widget: 'image' }
-      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+          - name: 'order'
+            label: 'Order'
+            widget: 'number'
+      - name: 'body'
+        label: 'Body'
+        widget: 'markdown'
