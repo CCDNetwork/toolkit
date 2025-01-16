@@ -1,0 +1,73 @@
+backend:
+  name: github
+  branch: main
+  repo: CCDNetwork/toolkit
+  base_url: https://datastew-auth.draftlab.dev/
+media_folder: 'public' # Media files will be stored in the repo under images/uploads
+
+collections:
+- label: "Pages"
+    name: "pages"
+    files:
+      - label: "Home page"
+        name: "home"
+        file: "src/content/docs/index.mdx"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Description, name: description, widget: markdown}
+          - {label: Template, name: templae, widget: string}
+          - name: hero
+        label: Hero
+        name: hero
+        widget: object
+        fields:
+          - name: title
+            label: Title
+            widget: markdown
+          - name: tagline
+            label: Tagline
+            widget: markdown
+          - name: image
+            label: Image
+            widget: image
+          - name: actions
+            label: Actions
+            widget: list
+            fields:
+              - name: text
+                label: Text
+                widget: string
+              - name: link
+                label: Link
+                wodget: string
+              - name: icon
+                label: Icon
+                widget: string
+              - name: variant
+                label: Variant
+                widget: string
+      - { name: body, label: Body, widget: markdown }
+
+      - label: "Locations Page"
+        name: "locations"
+        file: "site/content/locations.yml"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Intro, name: intro, widget: markdown}
+          - label: Locations
+            name: locations
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Address, name: address, widget: string}
+  - name: 'blog' # Used in routes, e.g., /admin/collections/blog
+    label: 'Blog' # Used in the UI
+    folder: 'src/content/docs' # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in frontmatter
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'blog' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Featured Image', name: 'thumbnail', widget: 'image' }
+      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
