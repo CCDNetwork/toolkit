@@ -1,6 +1,11 @@
 import { defineMarkdocConfig, component } from '@astrojs/markdoc/config';
 // import starlightMarkdoc from '@astrojs/starlight-markdoc';
 
+// @tingeber open issue
+// I manually imported content from @astrojs/starlight-markdoc and WellKnownElementAttributes
+// because of some nesting bug where my editor wouldn't recognize the tags
+// to be put back once we figure out whats happening
+
 /**
  * A list of well-known HTML element global attributes that can be used on any HTML element.
  *
