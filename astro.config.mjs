@@ -26,7 +26,7 @@ export default defineConfig({
           'https://github.com/ccdnethttps://github.com/CCDNetwork/toolkit',
         blueSky: 'https://bsky.app/profile/tin.fyi',
       },
-
+      lastUpdated: true,
       // sidebar: [
       // 	{
       // 		label: 'Guides',

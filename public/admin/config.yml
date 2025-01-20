@@ -1,4 +1,4 @@
-# local_backend: true
+local_backend: true
 
 backend:
   name: github
@@ -10,13 +10,13 @@ site_url: 'https://datastew.org'
 collections:
   - label: 'Pages'
     name: 'pages'
-    extension: 'mdx'
+    extension: 'mdoc'
     format: 'frontmatter'
     files:
       - label: 'Home page'
         name: 'homepage'
-        file: 'src/content/docs/index.mdx'
-        extension: 'mdx'
+        file: 'src/content/docs/index.mdoc'
+        extension: 'mdoc'
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Description', name: 'description', widget: 'markdown' }
@@ -31,9 +31,17 @@ collections:
               - name: 'tagline'
                 label: 'Tagline'
                 widget: 'markdown'
-              # - name: 'image'
-              #   label: 'Image'
-              #   widget: 'image'
+              - name: 'image'
+                label: 'Image'
+                widget: 'object'
+                fields:
+                  - name: 'file'
+                    label: 'Image File'
+                    widget: 'image'
+                    choose_url: false
+                    media_library:
+                      config:
+                        multiple: false
               - name: 'actions'
                 label: 'Actions'
                 widget: 'list'
@@ -52,26 +60,82 @@ collections:
                     widget: 'string'
                     required: false
           - { name: 'body', label: 'Body', widget: 'markdown' }
+      - label: 'Background'
+        name: 'background'
+        file: 'src/content/docs/background.mdoc'
+        extension: 'mdoc'
+        fields: # The fields for each document, usually in frontmatter
+          - name: 'author'
+            label: 'Author'
+            widget: 'string'
+            required: false
+          - name: 'title'
+            label: 'Title'
+            widget: 'string'
+          - name: 'draft'
+            label: 'Draft'
+            widget: 'boolean'
+            required: false
+            default: true
+          - name: 'sidebar'
+            label: 'Sidebar config'
+            widget: 'object'
+            fields:
+              - name: 'order'
+                label: 'Order'
+                widget: 'number'
+                required: false
+                hint: 'This is the weight used to order results in the sidebar menu (lower numbers are higher placed). If there is no number, the article will be shown in alphabetical order.'
+              - name: 'badge'
+                label: 'Badge'
+                widget: 'object'
+                required: false
+                collapsed: true
+                fields:
+                  - name: 'text'
+                    label: 'Text'
+                    widget: 'string'
+                    required: false
+                  - name: 'variant'
+                    label: 'Badge type'
+                    widget: 'select'
+                    options:
+                      ['note', 'danger', 'success', 'caution', 'tip', 'default']
+                    default: 'default'
+                    required: false
+              - name: 'hidden'
+                label: 'Hidden'
+                widget: 'boolean'
+                required: false
+                default: false
+                hint: 'Activate this option if you want to hide this page from the sidebar menu (it will still be accessible via direct URL)'
+
+          - name: 'body'
+            label: 'Body'
+            widget: 'markdown'
 
   - name: 'toolkit' # Used in routes, e.g., /admin/collections/blog
     label: 'Toolkit' # Used in the UI
+    label_singular: 'Toolkit Page'
     folder: 'src/content/docs/toolkit' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     extension: 'mdoc'
     format: 'frontmatter'
+    summary: '({{sidebar.order}}) - {{title}}'
+    sortable_fields: ['sidebar.order', 'title']
     fields: # The fields for each document, usually in frontmatter
       - name: 'author'
         label: 'Author'
         widget: 'string'
+        required: false
       - name: 'title'
         label: 'Title'
-        widget: 'string'
-      - name: 'slug'
-        label: 'Slug'
         widget: 'string'
       - name: 'draft'
         label: 'Draft'
         widget: 'boolean'
+        required: false
+        default: true
       - name: 'sidebar'
         label: 'Sidebar config'
         widget: 'object'
@@ -79,6 +143,32 @@ collections:
           - name: 'order'
             label: 'Order'
             widget: 'number'
+            required: false
+            hint: 'This is the weight used to order results in the sidebar menu (lower numbers are higher placed). If there is no number, the article will be shown in alphabetical order.'
+          - name: 'badge'
+            label: 'Badge'
+            widget: 'object'
+            required: false
+            collapsed: true
+            fields:
+              - name: 'text'
+                label: 'Text'
+                widget: 'string'
+                required: false
+              - name: 'variant'
+                label: 'Badge type'
+                widget: 'select'
+                options:
+                  ['note', 'danger', 'success', 'caution', 'tip', 'default']
+                default: 'default'
+                required: false
+          - name: 'hidden'
+            label: 'Hidden'
+            widget: 'boolean'
+            required: false
+            default: false
+            hint: 'Activate this option if you want to hide this page from the sidebar menu (it will still be accessible via direct URL)'
+
       - name: 'body'
         label: 'Body'
         widget: 'markdown'
