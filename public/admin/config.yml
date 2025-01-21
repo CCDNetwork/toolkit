@@ -7,6 +7,8 @@ backend:
   base_url: https://datastew-auth.draftlab.dev/
 media_folder: 'public' # Media files will be stored in the repo under images/uploads
 site_url: 'https://datastew.org'
+editor:
+  preview: false
 collections:
   - label: 'Pages'
     name: 'pages'
@@ -86,23 +88,23 @@ collections:
                 widget: 'number'
                 required: false
                 hint: 'This is the weight used to order results in the sidebar menu (lower numbers are higher placed). If there is no number, the article will be shown in alphabetical order.'
-              - name: 'badge'
-                label: 'Badge'
-                widget: 'object'
-                required: false
-                collapsed: true
-                fields:
-                  - name: 'text'
-                    label: 'Text'
-                    widget: 'string'
-                    required: false
-                  - name: 'variant'
-                    label: 'Badge type'
-                    widget: 'select'
-                    options:
-                      ['note', 'danger', 'success', 'caution', 'tip', 'default']
-                    default: 'default'
-                    required: false
+              # - name: 'badge'
+              #   label: 'Badge'
+              #   widget: 'object'
+              #   required: false
+              #   collapsed: true
+              #   fields:
+              #     - name: 'text'
+              #       label: 'Text'
+              #       widget: 'string'
+              #       required: false
+              #     - name: 'variant'
+              #       label: 'Badge type'
+              #       widget: 'select'
+              #       options:
+              #         ['note', 'danger', 'success', 'caution', 'tip', 'default']
+              #       default: 'default'
+              #       required: false
               - name: 'hidden'
                 label: 'Hidden'
                 widget: 'boolean'

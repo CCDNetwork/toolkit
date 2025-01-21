@@ -19,6 +19,7 @@
     "@types/react": "18.3.14",
     "@types/react-dom": "18.3.3",
     "astro": "5.1.7",
+    "astro-embed": "^0.9.0",
     "prettier-plugin-tailwindcss": "0.6.9",
     "react": "19.0.0",
     "react-dom": "19.0.0",
