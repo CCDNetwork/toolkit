@@ -98,6 +98,15 @@ export default defineMarkdocConfig({
         },
       },
     },
+    vimeo: {
+      render: component('astro-embed', 'Vimeo'),
+      attributes: {
+        id: {
+          type: String,
+          required: true,
+        },
+      },
+    },
     linkpreview: {
       render: component('astro-embed', 'LinkPreview'),
       attributes: {
