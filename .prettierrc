@@ -13,6 +13,12 @@
       "options": {
         "parser": "astro"
       }
+    },
+    {
+      "files": "*.mdoc",
+      "options": {
+        "parser": "markdown"
+      }
     }
   ],
   "plugins": ["prettier-plugin-tailwindcss", "prettier-plugin-astro"]
