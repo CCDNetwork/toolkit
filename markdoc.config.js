@@ -85,6 +85,37 @@ export default defineMarkdocConfig({
     },
   },
   tags: {
+    youtube: {
+      render: component('astro-embed', 'YouTube'),
+      attributes: {
+        id: {
+          type: String,
+          required: true,
+        },
+        title: {
+          type: String,
+          required: false,
+        },
+      },
+    },
+    linkpreview: {
+      render: component('astro-embed', 'LinkPreview'),
+      attributes: {
+        id: {
+          type: String,
+          required: true,
+        },
+      },
+    },
+    bluesky: {
+      render: component('astro-embed', 'BlueskyPost'),
+      attributes: {
+        id: {
+          type: String,
+          required: true,
+        },
+      },
+    },
     aside: {
       render: component('@astrojs/starlight/components', 'Aside'),
       attributes: {
