@@ -22,8 +22,7 @@ export default defineConfig({
         SiteTitle: '@components/SiteTitle.astro',
       },
       social: {
-        github:
-          'https://github.com/ccdnethttps://github.com/CCDNetwork/toolkit',
+        github: 'https://github.com/CCDNetwork/toolkit',
         blueSky: 'https://bsky.app/profile/tin.fyi',
       },
       lastUpdated: true,
