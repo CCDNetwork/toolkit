@@ -45,11 +45,6 @@ export default defineConfig({
           slug: 'background',
         },
         {
-          label: 'Training',
-          // Autogenerate a group of links for the 'constellations' directory.
-          autogenerate: { directory: 'training' },
-        },
-        {
           label: 'The Toolkit',
           // Autogenerate a group of links for the 'constellations' directory.
           autogenerate: { directory: 'toolkit' },
